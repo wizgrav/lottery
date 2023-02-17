@@ -1,0 +1,16 @@
+{
+    "scripts": {
+        "start": "webpack serve --devtool=eval-source-map --static-directory=. ./index.js",
+        "build": "webpack --mode=production "
+    },
+    "dependencies": {
+        "pixi.js": "^7.1.2"
+    },
+    "browser": "./index.js",
+    "devDependencies": {
+        "http-serve": "^1.0.1",
+        "webpack": "^5.56.0",
+        "webpack-cli": "^4.9.1",
+        "webpack-dev-server": "^4.7.1"
+    }
+}

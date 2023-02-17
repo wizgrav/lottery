@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Swirling Lottery</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            background-color: #111;
+        }
+        canvas {
+            margin-left:calc(50vw - 40vh);
+            width: 80vh;
+            height: 80vh;
+
+        }
+
+        #ui {
+            height: 15vh;
+            width: 100vw;
+            text-align: center;
+        }
+
+        #ui button {
+            height: 6vh;
+            font-size: 3vh;
+            background-color: white;
+            color: black;
+            padding: 1vh 2vh;
+            border: 0.2vh solid #666;
+            border-radius: 0.5vh;
+            font-family: Arial;
+            font-weight: 600;
+            cursor: pointer;
+            opacity: 0.75;
+            display: none;
+        }
+
+        #ui button:hover {
+            opacity: 1;
+        }
+
+        body.select.ready #start, body.select #lucky{
+            display: initial;
+        }
+
+        body.end #reset{
+            display: initial;
+        }
+
+        #win {
+            position:absolute;
+            width: 100vw;
+            height: 40vh;
+            top: 30vh;
+            font-size: 12vh;
+            font-family: Arial;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0.33vh 0.3vh 0.66vh #666;
+            transition-delay: 1.5s;
+            transition-property: transform;
+            transition-duration: 1s;
+            transform: scale(0);
+            text-align:center;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        body.end #win{
+            opacity: 1;
+            transform: scale(1);
+        
+        }
+
+        canvas {
+            user-select: none;
+        }
+    </style>
+    </head>
+    <body class="select">
+        <div id="win"></div>
+        <div id="ui">
+            <button id="lucky"> Lucky Dip </button>
+            <button id="start"> Start game </button>
+            <button id="reset"> Reset game </button>
+        </div>
+        <script src="main.js"></script>
+    </body>
+    </html>
