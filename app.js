@@ -32,7 +32,7 @@ export function onState(cb) {
 for ( let i = 0; i < 59; i++) {
     const slot = new Slot(i);
     slot.on("pointerdown",  function() {
-        if(Data.state !== "select" && Data.phase !== 1) return;
+        if(Data.state !== "select" || Data.phase !== 1) return;
         const index = Data.selected.indexOf(this);
         if(index === -1) {
             if(Data.selected.length < 6){

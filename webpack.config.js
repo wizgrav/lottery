@@ -1,5 +1,7 @@
 'use strict';
 
+const CopyPlugin = require("copy-webpack-plugin");
+
 module.exports = {
     mode: 'production',
     entry: {
@@ -7,8 +9,18 @@ module.exports = {
     },
     devtool: 'source-map',
     target: 'web',
+    
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                "index.html"
+            ]
+          })
+       
+        
+    ],
     output: {
-        path: __dirname + '/',
+        path: __dirname + '/docs',
         filename: '[name].js',
     },
     performance: {
